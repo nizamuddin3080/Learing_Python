@@ -7,10 +7,10 @@ class MessageUser:
     user_details = []
     message = []
     base_message = """
-                        Hi thank you for purchasing on {date}.
+                        Hi {name} ! thank you for purchasing on {date}.
                         we hope you are exiting about to using this 
                         just a reminder to purchase this total amount of ${total}.
-                        Have a great o ne 
+                        Have a great one 
                         
                         team CFC
                     """
@@ -49,16 +49,42 @@ class MessageUser:
             return []
 
 
-obj = MessageUser()
-obj.add_user("alim", 12, email='hello@cmtv.com')
-obj.add_user("rabbi", 54)
-obj.add_user("akash", 87)
-obj.add_user("adib", 85)
-obj.add_user("sabbir", 67)
-obj.add_user("likhon", 57)
-obj.add_user("ontu", 49)
-obj.get_details()
-obj.make_messages()
+def some_random():
+    print("yo, hey bangladeshi")
 
-# default_name = ["alim", "rabbi", "akash", "adib", "sabbir", "likhon", "ontu"]
-# default_amount = [12, 54, 87, 85, 67, 57, 49]
+
+unf_message = """
+                    Hi {name} ! thank you for purchasing on {date}.
+                    we hope you are exiting about to using this 
+                    just a reminder to purchase this total amount of ${total}.
+                    Have a great one 
+                    
+                    team CFC
+                """
+
+
+def make_messages(self, names, amounts):
+    message = []
+    if len(names) == len(amounts):
+        i = 0
+        today = datetime.date.today()
+        text = '{today.month}/{today.day}/{today.year}'.format(today=today)
+        for name in names:
+            '''
+            Here's a simple solution to capitalized 
+            everyone's name prior to sending 
+            '''
+            name = name[0].upper() + name[1:].lower()
+            '''
+            Did youu gat the bonus? 
+            '''
+
+            new_amount = "%.2f" % {amounts[i]}
+
+            new_msg = unf_message.format(
+                name=name,
+                date=text,
+                total=new_amount
+            )
+            i += 1
+            print(new_msg)
