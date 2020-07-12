@@ -1,0 +1,7 @@
+Hi {name} !
+Thank you for purchasing on {date}.
+we hope you are exiting about to using this
+just a reminder to purchase this total amount of ${total}.
+Have a great one 
+                    
+team CFC
